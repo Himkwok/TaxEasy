@@ -1,6 +1,6 @@
 Welcome To Jaxer, the Aptana Ajax Server.
 
-Quick Start:
+Quick Start One:
 
 ===== On Microsoft Windows hi:
 
