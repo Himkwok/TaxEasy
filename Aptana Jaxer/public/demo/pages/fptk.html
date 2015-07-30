@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../easyui14/themes/metro/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui14/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../easyui14/demo.css">
+    <script type="text/javascript" src="../easyui14/jquery.min.js"></script>
+    <script type="text/javascript" src="../easyui14/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui14/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../commons/datahelper.js" runat="server"></script>
+</head>
+<body>
+<div class="easyui-panel" style="padding:5px;width:100%;background-color: #2f80d1;color: #fffeee">
+    <a href="#" class="easyui-linkbutton" data-options="plain:true">开票</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true">合并开票</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true">批量开票</a>
+</div>
+<table id="tt" title="发票填开" class="easyui-datagrid" style="width:100%;height:250px" url="datagrid_data3.json"
+       rownumbers="true"
+       idField="itemid" pagination="true"
+       iconCls="icon-pencil">
+    <thead>
+    <tr>
+        <th field="ck" checkbox="true"></th>
+        <th field="sysno" width="120">单据号</th>
+        <th field="productid" width="80">商品行数</th>
+        <th field="listprice" width="80">购方名称</th>
+        <th field="unitcost" width="80">购方税号</th>
+        <th field="attr1" width="100">购方地址电话</th>
+        <th field="status" width="160">购方银行帐号</th>
+        <th field="attr1" width="100">复核人</th>
+        <th field="status" width="160">收款人</th>
+        <th field="status" width="100">单据日期</th>
+        <th field="status" width="120">销方银行帐号</th>
+        <th field="status" width="120">销方地址电话</th>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>

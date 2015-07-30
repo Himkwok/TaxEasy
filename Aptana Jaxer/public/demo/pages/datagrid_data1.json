@@ -1,0 +1,106 @@
+{
+  "total": 28,
+  "rows": [
+    {
+      "status1": "是",
+      "productid": "FI-SW-01",
+      "productname": "Koi",
+      "unitcost": "310000198306200670",
+      "status": "中国建设银行上海分行打浦路支行 2121012800056205",
+      "listprice": "310226694224155",
+      "attr1": "Large",
+      "itemid": "客户名称1"
+    },
+    {
+      "status1": "是",
+      "productid": "K9-DL-01",
+      "productname": "Dalmation",
+      "unitcost": "310000198306200670",
+      "status": "中国建设银行上海分行打浦路支行 2121012800056205",
+      "listprice": "310226694224155",
+      "attr1": "Spotted Adult Female",
+      "itemid": "客户名称2"
+    },
+    {
+      "status1": "是",
+      "productid": "RP-SN-01",
+      "productname": "Rattlesnake",
+      "unitcost": "310000198306200670",
+      "status": "中国建设银行上海分行打浦路支行 2121012800056205",
+      "listprice": "310226694224155",
+      "attr1": "Venomless",
+      "itemid": "客户名称-11"
+    },
+    {
+      "status1": "是",
+      "productid": "RP-SN-01",
+      "productname": "Rattlesnake",
+      "unitcost": "310000198306200670",
+      "status": "中国建设银行上海分行打浦路支行 2121012800056205",
+      "listprice": "310226694224155",
+      "attr1": "Rattleless",
+      "itemid": "客户名称-12"
+    },
+    {
+      "status1": "是",
+      "selected": true,
+      "productid": "RP-LI-02",
+      "productname": "Iguana",
+      "unitcost": "310000198306200670",
+      "status": "中国建设银行上海分行打浦路支行 2121012800056205",
+      "listprice": "310226694224155",
+      "attr1": "Green Adult",
+      "itemid": "客户名称-13"
+    },
+    {
+      "status1": "是",
+      "productid": "FL-DSH-01",
+      "productname": "Manx",
+      "unitcost": "310000198306200670",
+      "status": "中国建设银行上海分行打浦路支行 2121012800056205",
+      "listprice": "310226694224155",
+      "attr1": "Tailless",
+      "itemid": "客户名称-14"
+    },
+    {
+      "status1": "否",
+      "productid": "FL-DSH-01",
+      "productname": "Manx",
+      "unitcost": "310000198306200670",
+      "status": "中国建设银行上海分行打浦路支行 2121012800056205",
+      "listprice": "310226694224155",
+      "attr1": "With tail",
+      "itemid": "客户名称-15"
+    },
+    {
+      "status1": "是",
+      "productid": "FL-DLH-02",
+      "productname": "Persian",
+      "unitcost": "310000198306200670",
+      "status": "中国建设银行上海分行打浦路支行 2121012800056205",
+      "listprice": "310226694224155",
+      "attr1": "Adult Female",
+      "itemid": "客户名称-16"
+    },
+    {
+      "status1": "是",
+      "productid": "FL-DLH-02",
+      "productname": "Persian",
+      "unitcost": "310000198306200670",
+      "status": "中国建设银行上海分行打浦路支行 2121012800056205",
+      "listprice": "310226694224155",
+      "attr1": "Adult Male",
+      "itemid": "客户名称-17"
+    },
+    {
+      "status1": "是",
+      "productid": "AV-CB-01",
+      "productname": "Amazon Parrot",
+      "unitcost": "310000198306200670",
+      "status": "中国建设银行上海分行打浦路支行 2121012800056205",
+      "listprice": "310226694224155",
+      "attr1": "Adult Male",
+      "itemid": "客户名称-18"
+    }
+  ]
+}

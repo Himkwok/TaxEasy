@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="../easyui14/themes/metro/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui14/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../easyui14/demo.css">
+
+    <script type="text/javascript" src="../easyui14/jquery.min.js"></script>
+    <script type="text/javascript" src="../easyui14/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui14/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../commons/datahelper.js" runat="server"></script>
+ <script>
+    function dlszsm(){
+        $("#dg").datagrid("options").url= 'szsm_data.json';
+        $("#dg").datagrid("reload");
+    }
+ </script>
+</head>
+<body>
+<div class="easyui-panel" style="padding:5px;width:100%">
+    <a href="#" onclick="dlszsm();" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-edit'">导入税种税目数据</a>
+</div>
+<p></p>
+<table id="dg" class="easyui-datagrid" title="税种税目" style="width:auto;height:auto"
+       data-options="
+				iconCls: 'icon-edit',
+				singleSelect: true,
+				method: 'get',
+
+			" pagination="true" rownumbers="false">
+    <thead>
+    <tr>
+        <th data-options="field:'szsmsyh',width:120">税种税目索引号</th>
+        <th data-options="field:'szsmdm',width:150">
+            税种税目代码
+        </th>
+        <th data-options="field:'szmc',width:280,align:'left'">税种名称</th>
+        <th data-options="field:'smmc',width:120,align:'left'">税目名称</th>
+        <th data-options="field:'sl',width:120,align:'left'">税率</th>
+        <th data-options="field:'hsbz',width:100,align:'left'">含税标志</th>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>

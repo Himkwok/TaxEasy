@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../easyui14/themes/metro/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui14/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../easyui14/demo.css">
+    <link rel="stylesheet" type="text/css" href="../css/TableZB.css">
+    <script type="text/javascript" src="../easyui14/jquery.min.js"></script>
+    <script type="text/javascript" src="../easyui14/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui14/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../commons/datahelper.js" runat="server"></script>
+    <script>
+        function kp() {
+            var fplx = $('#cc').combobox("getValue");
+            var selected_data = $("#tt").datagrid("getSelected");
+
+            var data = {
+                'CLIENTNO': 'KP005',
+                TaxMachineIP: '127.0.0.1',
+                SysInvNo: selected_data.sysno,
+                InvoiceList: '0',
+                InvoiceSplit: '0',
+                InvoiceConsolidate: '0',
+                InvoiceData: "<?xml version='1.0' encoding='gbk'?>\n" +
+                "<InvoiceData>\n" +
+                "\t<body>\n" +
+                "\t\t<input>\n" +
+                "\t\t\t<SwiftNumber>ab9b7432-0c1b-4eed-adb8-3b33dc579025</SwiftNumber>\n" +
+                "\t\t\t<InvType>" + fplx + "</InvType>\n" +
+                "\t\t\t<CreditNoteInv>0</CreditNoteInv>\n" +
+                "\t\t\t<CancelInvType>0</CancelInvType>\n" +
+                "\t\t\t<VenderTaxNo>500102010003752</VenderTaxNo>\n" +
+                "\t\t\t<VenderName>升级版测试用户3752</VenderName>\n" +
+                "\t\t\t<VenderAddressTel>杨浦区宁国路2281212121号14楼612333223032</VenderAddressTel>\n" +
+                "\t\t\t<VenderBankNameNo>中国银行上海杨浦支行4481221345922156450</VenderBankNameNo>\n" +
+                "\t\t\t<CustomerTaxNo>310101000123456789</CustomerTaxNo>\n" +
+                "\t\t\t<CustomerName>锦州隆舰物流有限公司</CustomerName>\n" +
+                "\t\t\t<CustomerAddressTel>杨浦区宁国路228221212号18楼612333223032</CustomerAddressTel>\n" +
+                "\t\t\t<CustomerBankNameNo>中国银行上海杨浦支行4487877635355352512</CustomerBankNameNo>\n" +
+                "\t\t\t<InvoiceDetail count='1'>\n" +
+                "\t\t\t\t<group xh='1'>\n" +
+                "\t\t\t\t\t<ProductName>排污阀</ProductName>\n" +
+                "\t\t\t\t\t<ProductSize>Z44H-25  40mm</ProductSize>\n" +
+                "\t\t\t\t\t<ProductUnit>只</ProductUnit>\n" +
+                "\t\t\t\t\t<ProductAmount>1</ProductAmount>\n" +
+                "\t\t\t\t\t<UnitPrice>123.00</UnitPrice>\n" +
+                "\t\t\t\t\t<TotalAmount>123.00</TotalAmount>\n" +
+                "\t\t\t\t\t<TaxRate>0.17</TaxRate>\n" +
+                "\t\t\t\t\t<TaxAmount/>\n" +
+                "\t\t\t\t\t<TaxMark>1</TaxMark>\n" +
+                "\t\t\t\t</group>\n" +
+                "\t\t\t</InvoiceDetail>\n" +
+                "<zhsl>0.09</zhsl>\n" +
+                "\t\t\t<SumTotalAmount>579</SumTotalAmount>\n" +
+                "\t\t\t<SumTaxAmount/>\n" +
+                "\t\t\t<Total/>\n" +
+                "\t\t\t<Remark></Remark>\n" +
+                "\t\t\t<Receiver>test</Receiver>\n" +
+                "\t\t\t<Checker>test</Checker>\n" +
+                "\t\t\t<Issuer>test</Issuer>\n" +
+                "\t\t\t<CancelUser/>   \n" +
+                "            <zyspmc></zyspmc>\n" +
+                "            <spsm></spsm>         \n" +
+                "\t\t\t<Month/>\n" +
+                "\t\t\t<CNNoticeNo/>\n" +
+                "\t\t\t<CNDNCode/>\n" +
+                "\t\t\t<CNDNNo/>\n" +
+                "\t\t</input>\n" +
+                "\t</body>\n" +
+                "</InvoiceData>"
+            };
+            $.ajax({
+                url: "http://localhost:6204/Service.asmx/CallService",
+
+                data: data,
+                dataType: "xml",
+                type: "POST",
+                error: function (x, e) {
+
+                },
+                success: function (data) {
+                    alert("发票开具" + $(data.all[0].textContent).find("returnmsg").text());
+                    $('#win').window('close');
+                }
+            });
+        }
+        function test() {
+            debugger;
+            var fplx = $('#cc').combobox("getValue");
+            var data = {'CLIENTNO': 'KP005', TaxMachineIP: '127.0.0.1', fplxdm: fplx};
+            var selected_data = $("#tt").datagrid("getSelected");
+            if (selected_data == null) {
+                alert("请先选择需要开具发票的单据主表数据");
+                return;
+            }
+
+            $.ajax({
+                url: "http://localhost:6204/Service.asmx/GetCodeAndNo",
+                //contentType: "application/text; charset=utf-8",
+                data: data,
+                dataType: "xml",
+                type: "GET",
+                error: function (x, e) {
+                    debugger;
+                },
+                success: function (data) {
+                    debugger;
+                    $(data.all[0].textContent).find("dqfphm").each(function (len, o) {
+                        $("#info1").text("" + $(o).text());
+                    });
+                    $(data.all[0].textContent).find("dqfpdm").each(function (len, o) {
+                        $("#info2").text("" + $(o).text());
+                    });
+                }
+            });
+            $('#win').window({
+                width: 600,
+                height: 200,
+                modal: true,
+                title: "发票填开 - " + $('#cc').combobox("getText")
+            });
+        }
+        window.onload = function () {
+            $('#tt').datagrid({
+                onClickRow: function (rowIndex, rowData) {
+                    //$('#tt').datagrid('clearChecked');
+                    $('#tt1').datagrid('loadData', {
+                        "total": 1,
+                        "rows": [
+                            {
+                                "sysno": rowData.sysno,
+                                "hwmc": "排污阀",
+                                "jldw": "只",
+                                "gg": "Z44H-25  40mm",
+                                "sli": "1",
+                                "je": "123.00",
+                                "sl": "0.17",
+                                "se": "20.91",
+                                "dj": "123.00",
+                                "hsbz": "是"
+                            }
+                        ]
+                    });
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+<div class="easyui-panel" style="padding:5px;width:100%">
+    发票类型:<select id="cc" class="easyui-combobox" name="fplx" style="width:200px;">
+    <option value="0">增值税专用发票</option>
+    <option value="1">增值税普通发票</option>
+</select>
+    <a href="#" onclick="test();" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-edit'">单张即时开票</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-edit'">批量开票</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-edit'">合并开票</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-edit'">开票拆分</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-edit'">发票作废</a>
+    <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-edit'">发票红冲</a>
+</div>
+<p></p>
+
+<div class="easyui-panel" title="查询" data-options="collapsible:true" style="width:100%">
+    <div style="padding:10px 60px 20px 60px">
+        <form id="ff" method="post">
+            <table cellpadding="5">
+                <tr>
+                    <td>发票代码:</td>
+                    <td><input class="easyui-textbox" type="text" name="name" data-options="required:true"></input></td>
+                    <td>发票号码:</td>
+                    <td><input class="easyui-textbox" type="text" name="email"
+                               data-options="required:true,validType:'email'"></input></td>
+                    <td>发票日期:</td>
+                    <td><input class="easyui-datebox" type="text" name="subject" data-options="required:true"></input>
+                    </td>
+                    <td  align="center">
+
+                        <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-edit'">查询</a>
+                    </td>
+                </tr>
+
+
+            </table>
+        </form>
+    </div>
+</div>
+<p></p>
+<table id="tt" title="待开票数据 - 单据主表" class="easyui-datagrid" style="width:100%;height:200px"
+       url="datagrid_data_kp.json"
+       rownumbers="true" striped="true"
+       idField="sysno" pagination="true" onClickRow="selectrow();"
+       iconCls="icon-save">
+    <thead>
+    <tr>
+        <th field="ck" checkbox="true"></th>
+        <th field="sysno" width="150">单据号</th>
+        <th field="hs" width="80">商品行数</th>
+        <th field="gfmc" width="180">购方名称</th>
+        <th field="gfsh" width="180">购方税号</th>
+        <th field="gfdz" width="200">购方地址电话</th>
+        <th field="gfyh" width="280">购方银行帐号</th>
+        <th field="fhr" width="80">复核人</th>
+        <th field="skr" width="80">收款人</th>
+        <th field="rq" width="80">单据日期</th>
+        <th field="xfyhzh" width="250">销方银行帐号</th>
+        <th field="xfdz" width="250">销方地址电话</th>
+    </tr>
+    </thead>
+</table>
+<p></p>
+<table id="tt1" title="待开票数据 - 单据明细表" class="easyui-datagrid" style="width:100%;height:180px"
+
+       rownumbers="true" striped="true"
+       idField="sysno" pagination="true"
+       iconCls="icon-save">
+    <thead>
+    <tr>
+        <th field="ck" checkbox="true"></th>
+        <th field="sysno" width="150">单据号</th>
+        <th field="hwmc" width="80">货物名称</th>
+        <th field="jldw" width="80">计量单位</th>
+        <th field="gg" width="120">规格</th>
+        <th field="sli" width="50" align="right">数量</th>
+        <th field="je" width="80" align="right">金额</th>
+        <th field="sl" width="80" align="right">税率</th>
+        <th field="se" width="80" align="right">税额</th>
+        <th field="dj" width="80" align="right">单价</th>
+        <th field="hsbz" width="70">含税标志</th>
+    </tr>
+    </thead>
+</table>
+<div style="display: none">
+    <div id="win">
+        <table border="1" cellpadding="1" style="width: 100%;border-collapse:collapse:collapse;" cellspacing="0"
+               align="center"
+               id="one" class="TableStyleZB">
+            <tbody>
+            <tr>
+                <td class="" colspan="2" align="center">请核对当前打印机发票代码、发票号码</td>
+            </tr>
+            <tr>
+                <td class="titleTd" id="" style="width: 120px">当前发票号码</td>
+                <td class="" id="info1" style="color:red"></td>
+            </tr>
+            <tr>
+                <td class="titleTd" style="width: 120px">当前发票代码</td>
+                <td class="" id="info2" style="color:red"></td>
+            </tr>
+            <tr>
+                <td class="" colspan="2" align="center">
+                    <a href="#" onclick="kp();" class="easyui-linkbutton" width>开票</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

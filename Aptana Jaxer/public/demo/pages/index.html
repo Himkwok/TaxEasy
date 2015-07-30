@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../easyui14/themes/metro/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../easyui14/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../easyui14/demo.css">
+    <link rel="stylesheet" type="text/css" href="../css/TableZB.css">
+    <script type="text/javascript" src="../easyui14/jquery.min.js"></script>
+    <script type="text/javascript" src="../easyui14/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../easyui14/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="../commons/datahelper.js" runat="server"></script>
+    <script type="text/javascript" src="../fusioncharts/fusioncharts.js"></script>
+    <script type="text/javascript" src="../fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+    <script>
+        $(function () {
+            FusionCharts.ready(function () {
+                var revenueChart = new FusionCharts({
+                    "type": "column3d",
+                    "renderAt": "chartContainer",
+                    "width": "100%",
+                    "height": "300",
+                    "dataFormat": "json",
+                    "dataSource": {
+                        "chart": {
+                            "caption": "近12期用票情况一览",
+                            "subCaption": "",
+                            "xAxisName": "月份",
+                            "yAxisName": "用票量",
+                            "theme": "fint"
+                        },
+                        "data": [
+                            {
+                                "label": "一月",
+                                "value": "150"
+                            },
+                            {
+                                "label": "二月",
+                                "value": "134"
+                            },
+                            {
+                                "label": "三月",
+                                "value": "345"
+                            },
+                            {
+                                "label": "四月",
+                                "value": "478"
+                            },
+                            {
+                                "label": "五月",
+                                "value": "321"
+                            },
+                            {
+                                "label": "六月",
+                                "value": "125"
+                            },
+                            {
+                                "label": "七月",
+                                "value": "178"
+                            },
+                            {
+                                "label": "八月",
+                                "value": "189"
+                            },
+                            {
+                                "label": "九月",
+                                "value": "200"
+                            },
+                            {
+                                "label": "十月",
+                                "value": "560"
+                            },
+                            {
+                                "label": "十一月",
+                                "value": "127"
+                            },
+                            {
+                                "label": "十二月",
+                                "value": "267"
+                            }
+                        ]
+                    }
+                });
+                revenueChart.render();
+
+                revenueChart = new FusionCharts({
+                    "type": "pie3d",
+                    "renderAt": "chartContainer2",
+                    "width": "100%",
+                    "height": "300",
+                    "dataFormat": "json",
+                    "dataSource": {
+                        "chart": {
+                            "caption": "发票仓位预警仪表盘",
+                            "subcaption": "",
+                            "startingangle": "120",
+                            "showlabels": "0",
+                            "showlegend": "1",
+                            "enablemultislicing": "0",
+                            "slicingdistance": "15",
+                            "showpercentvalues": "1",
+                            "showpercentintooltip": "0",
+                            "plottooltext": "$label 剩余发票量 : $datavalue",
+                            "theme": "fint"
+                        },
+                        "data": [
+                            {
+                                "label": "上海分公司",
+                                "value": "680"
+                            },
+                            {
+                                "label": "北京分公司",
+                                "value": "982"
+                            },
+                            {
+                                "label": "深圳分公司",
+                                "value": "573"
+                            }
+                        ]
+                    }
+                });
+                revenueChart.render();
+
+                revenueChart = new FusionCharts({
+                    "type": "pareto3d",
+                    "renderAt": "chartContainer3",
+                    "width": "100%",
+                    "height": "300",
+                    "dataFormat": "json",
+                    "dataSource": {
+                        "chart": {
+                            "caption": "独立申报企业当期税款比对/税负率",
+                            "subCaption": "2015-07-01",
+                            "paletteColors": "#FF8000",
+                            "lineColor": "#1aaf5d",
+                            "xAxisName": "",
+                            "pYAxisName": "当期税款",
+                            "sYAxisname": "税负率",
+                            "bgColor": "#ffffff",
+                            "borderAlpha": "20",
+                            "showCanvasBorder": "0",
+                            "usePlotGradientColor": "0",
+                            "plotBorderAlpha": "10",
+                            "showHoverEffect": "1",
+                            "showValues": "0",
+                            "showXAxisLine": "1",
+                            "xAxisLineColor": "#999999",
+                            "divlineColor": "#999999",
+                            "showAlternateHGridColor": "0",
+                            "subcaptionFontBold": "0",
+                            "subcaptionFontSize": "14"
+                        },
+                        "data": [
+                            {
+                                "label": "上海分公司",
+                                "value": "1680"
+                            },
+                            {
+                                "label": "北京分公司",
+                                "value": "1036"
+                            },
+                            {
+                                "label": "深圳分公司",
+                                "value": "950"
+                            }
+                        ]
+                    }
+                });
+                revenueChart.render();
+            })
+        });
+    </script>
+</head>
+<body>
+<div>
+    <div style="float: right; margin: 0 0 0 -66%; width: 33%;">
+        <div id="chartContainer3">loading...</div>
+    </div>
+    <div style="float: left; width: 33%;">
+        <div id="chartContainer">loading...</div>
+    </div>
+    <div style="float: left; width: 33%;">
+        <div id="chartContainer2">loading...</div>
+    </div>
+</div>
+<fieldset class="fileset_style">
+    <legend class="leg_style">发票库存一览信息</legend>
+    <p style=" color: #2f80d1;">名称:XX银行上海分行 纳税人识别号:*********** 税控盘编号:499000135630</p>
+    <table border="1" cellpadding="1" style="width: 100%;border-collapse:collapse:collapse;" cellspacing="0"
+           align="center"
+           id="one" class="TableStyleZB">
+        <tbody>
+        <tr>
+            <td class="titleTd">序号</td>
+            <td class="titleTd">发票种类</td>
+            <td class="titleTd">类别代码</td>
+            <td class="titleTd">限额</td>
+            <td class="titleTd">起始号码</td>
+            <td class="titleTd">终止号码</td>
+            <td class="titleTd">发票份数</td>
+            <td class="titleTd">剩余份数</td>
+            <td class="titleTd">领购日期</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>增值税专票</td>
+            <td>1110098076</td>
+            <td>100000</td>
+            <td>37535500</td>
+            <td>37535999</td>
+            <td>500</td>
+            <td>500</td>
+            <td>2015-07-02</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>增值税普票</td>
+            <td>1110000450</td>
+            <td>100000</td>
+            <td>37535000</td>
+            <td>37535499</td>
+            <td>500</td>
+            <td>499</td>
+            <td>2015-07-02</td>
+        </tr>
+        </tbody>
+    </table>
+    <p style=" color: #2f80d1;">名称:XX银行北京分行 纳税人识别号:***********  税控盘编号:499000135631</p>
+    <table border="1" cellpadding="1" style="width: 99%;border-collapse:collapse:collapse;" cellspacing="0"
+           align="center"
+           id="one" class="TableStyleZB">
+        <tbody>
+        <tr>
+            <td class="titleTd">序号</td>
+            <td class="titleTd">发票种类</td>
+            <td class="titleTd">类别代码</td>
+            <td class="titleTd">限额</td>
+            <td class="titleTd">起始号码</td>
+            <td class="titleTd">终止号码</td>
+            <td class="titleTd">发票份数</td>
+            <td class="titleTd">剩余份数</td>
+            <td class="titleTd">领购日期</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>增值税专票</td>
+            <td>1110098076</td>
+            <td>100000</td>
+            <td>37535500</td>
+            <td>37535999</td>
+            <td>500</td>
+            <td>500</td>
+            <td>2015-07-02</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>增值税普票</td>
+            <td>1110000450</td>
+            <td>100000</td>
+            <td>37535000</td>
+            <td>37535499</td>
+            <td>500</td>
+            <td>499</td>
+            <td>2015-07-02</td>
+        </tr>
+        </tbody>
+    </table>
+    <p style=" color: #2f80d1;">名称:XX银行深圳分行  纳税人识别号:***********  税控盘编号:499000135632</p>
+    <table border="1" cellpadding="1" style="width: 100%;border-collapse:collapse:collapse;" cellspacing="0"
+           align="center"
+           id="one" class="TableStyleZB">
+        <tbody>
+        <tr>
+            <td class="titleTd">序号</td>
+            <td class="titleTd">发票种类</td>
+            <td class="titleTd">类别代码</td>
+            <td class="titleTd">限额</td>
+            <td class="titleTd">起始号码</td>
+            <td class="titleTd">终止号码</td>
+            <td class="titleTd">发票份数</td>
+            <td class="titleTd">剩余份数</td>
+            <td class="titleTd">领购日期</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>增值税专票</td>
+            <td>1110098076</td>
+            <td>100000</td>
+            <td>37535500</td>
+            <td>37535999</td>
+            <td>500</td>
+            <td>500</td>
+            <td>2015-07-02</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>增值税普票</td>
+            <td>1110000450</td>
+            <td>100000</td>
+            <td>37535000</td>
+            <td>37535499</td>
+            <td>500</td>
+            <td>499</td>
+            <td>2015-07-02</td>
+        </tr>
+        </tbody>
+    </table>
+</fieldset>
+
+
+</body>
+</html>

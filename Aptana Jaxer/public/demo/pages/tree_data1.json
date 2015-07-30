@@ -1,0 +1,21 @@
+[{
+  "id":1,
+  "text":"商品信息类别",
+  "children":[{
+    "id":11,
+    "text":"一般货物",
+    "state":"open"
+  },{
+    "id":12,
+    "text":"简易征收",
+    "state":"open"
+  },{
+    "id":13,
+    "text":"一般商品13%",
+    "state":"open"
+  },{
+    "id":14,
+    "text":"劳务",
+    "state":"open"
+  }]
+}]
