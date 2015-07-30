@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>机电设备管理系统</title>
+<link rel="stylesheet" href="easyui/themes/default/easyui.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="css/main.css" type="text/css" media="screen"/>
+<link rel="stylesheet" href="css/TableZB.css" type="text/css" media="screen"/>
+<script src="easyui/jquery-1.3.2.min.js"></script>
+<script src="easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="fusioncharts/fusioncharts.js"></script>
+<script type="text/javascript" src="fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+<script>
+    $(function () {
+        $('#menus').accordion();
+        $('#main-center').tabs();
+        $('body').layout();
+
+        FusionCharts.ready(function () {
+            var revenueChart = new FusionCharts({
+                "type": "column3d",
+                "renderAt": "chartContainer",
+                "width": "100%",
+                "height": "300",
+                "dataFormat": "json",
+                "dataSource": {
+                    "chart": {
+                        "caption": "Monthly revenue for last year",
+                        "subCaption": "Harry's SuperMart",
+                        "xAxisName": "Month",
+                        "yAxisName": "Revenues (In USD)",
+                        "theme": "fint"
+                    },
+                    "data": [
+                        {
+                            "label": "Jan",
+                            "value": "420000"
+                        },
+                        {
+                            "label": "Feb",
+                            "value": "810000"
+                        },
+                        {
+                            "label": "Mar",
+                            "value": "720000"
+                        },
+                        {
+                            "label": "Apr",
+                            "value": "550000"
+                        },
+                        {
+                            "label": "May",
+                            "value": "910000"
+                        },
+                        {
+                            "label": "Jun",
+                            "value": "510000"
+                        },
+                        {
+                            "label": "Jul",
+                            "value": "680000"
+                        },
+                        {
+                            "label": "Aug",
+                            "value": "620000"
+                        },
+                        {
+                            "label": "Sep",
+                            "value": "610000"
+                        },
+                        {
+                            "label": "Oct",
+                            "value": "490000"
+                        },
+                        {
+                            "label": "Nov",
+                            "value": "900000"
+                        },
+                        {
+                            "label": "Dec",
+                            "value": "730000"
+                        }
+                    ]
+                }
+            });
+
+            revenueChart.render();
+
+            revenueChart = new FusionCharts({
+                "type": "pie3d",
+                "renderAt": "chartContainer2",
+                "width": "100%",
+                "height": "300",
+                "dataFormat": "json",
+                "dataSource": {
+                    "chart": {
+                        "caption": "Age profile of website visitors",
+                        "subcaption": "Last Year",
+                        "startingangle": "120",
+                        "showlabels": "0",
+                        "showlegend": "1",
+                        "enablemultislicing": "0",
+                        "slicingdistance": "15",
+                        "showpercentvalues": "1",
+                        "showpercentintooltip": "0",
+                        "plottooltext": "Age group : $label Total visit : $datavalue",
+                        "theme": "fint"
+                    },
+                    "data": [
+                        {
+                            "label": "Teenage",
+                            "value": "1250400"
+                        },
+                        {
+                            "label": "Adult",
+                            "value": "1463300"
+                        },
+                        {
+                            "label": "Mid-age",
+                            "value": "1050700"
+                        },
+                        {
+                            "label": "Senior",
+                            "value": "491000"
+                        }
+                    ]
+                }
+            });
+            revenueChart.render();
+            ///
+
+            revenueChart = new FusionCharts({
+                "type": "pareto3d",
+                "renderAt": "chartContainer3",
+                "width": "100%",
+                "height": "300",
+                "dataFormat": "json",
+                "dataSource": {
+                    "chart": {
+                        "caption": "Employee late arrivals by reported cause",
+                        "subCaption": "Last month",
+                        "paletteColors": "#0075c2",
+                        "lineColor": "#1aaf5d",
+                        "xAxisName": "Reported Cause",
+                        "pYAxisName": "No. of Occurrence",
+                        "sYAxisname": "Cumulative Percentage",
+                        "bgColor": "#ffffff",
+                        "borderAlpha": "20",
+                        "showCanvasBorder": "0",
+                        "usePlotGradientColor": "0",
+                        "plotBorderAlpha": "10",
+                        "showHoverEffect": "1",
+                        "showValues": "0",
+                        "showXAxisLine": "1",
+                        "xAxisLineColor": "#999999",
+                        "divlineColor": "#999999",
+                        "showAlternateHGridColor": "0",
+                        "subcaptionFontBold": "0",
+                        "subcaptionFontSize": "14"
+                    },
+                    "data": [
+                        {
+                            "label": "Traffic",
+                            "value": "5680"
+                        },
+                        {
+                            "label": "Family Engagement",
+                            "value": "1036"
+                        },
+                        {
+                            "label": "Public Transport",
+                            "value": "950"
+                        },
+                        {
+                            "label": "Weather",
+                            "value": "500"
+                        },
+                        {
+                            "label": "Emergency",
+                            "value": "140"
+                        },
+                        {
+                            "label": "Others",
+                            "value": "68"
+                        }
+                    ]
+                }
+            });
+            revenueChart.render();
+        })
+    });
+    function addTab(title, href) {
+        if (href) {
+            var content = '<iframe scrolling="no" frameborder="0"  src="' + href + '" style="width:100%;height:100%;"></iframe>';
+        } else {
+            var content = '未实现';
+        }
+        $('#main-center').tabs('add', {
+            title: title,
+            closable: true,
+            content: content
+        });
+    }
+</script>
+<style>
+    .menu {
+        text-align: center;
+        background: #fff;      height: 80px;
+    }
+
+    .menu img {
+        border: 0;
+    }
+
+    .fileset_style {
+        border: 1px solid #DDDDDD;
+        margin-bottom: 8px;
+        padding: 8px;
+        padding-top: 4px;
+        margin: 0 auto;
+        width: 97%;
+    }
+
+    .leg_style {
+        color: #CC0000;
+        height: 23px;
+        line-height: 10px;
+        font-weight: bold;
+        margin: 0px;
+        padding: 0px;
+        line-height: 23px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+</style>
+</head>
+<body>
+
+<div region="north" style="background:#fafafa;color:#2d5593;height:40px;">
+    <div style="font-size:16px;font-weight:bold;width:400px;padding:10px 0 0 10px;">机电设备管理系统</div>
+</div>
+
+<div region="west" title="导航菜单" split="true" fit="true" style="width:150px;">
+    <div id="menus">
+        <div title="基础信息设置">
+            <table style="width:100%;">
+                <tr>
+                    <td class="menu">
+                        <a href="javascript:addTab('税控盘','pages/skp.html')"> <img src="images/print_class.png"></img><br/> <span>税控盘</span> </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="menu">
+                        <a href="javascript:addTab('客户编码','pages/khbm.html')"> <img src="images/print_class.png"></img><br/> <span>客户编码</span> </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="menu">
+                        <a href="javascript:addTab('商品编码','pages/spbm.html')"> <img src="images/kdmconfig.png"></img><br/> <span>商品编码</span> </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="menu">
+                        <a href="javascript:addTab('税目编码','pages/smbm.html')"> <img src="images/package_settings.png"></img><br/> <span>税目编码</span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div title="发票管理">
+            <table style="width:100%;">
+                <tr>
+                    <td class="menu">
+                        <a href="javascript:addTab('发票填开','pages/fptk.html')"> <img src="images/package.png"></img><br/> <span>发票填开</span> </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="menu">
+                        <a href="javascript:addTab('设备类别')"> <img src="images/kontact.png"></img><br/> <span>设备类别</span> </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div title="数据设置">
+            <table style="width:100%;">
+                <tr>
+                    <td class="menu">
+                        <a href="javascript:addTab('区域设置')"> <img src="images/package.png"></img><br/> <span>区域设置</span> </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="menu">
+                        <a href="javascript:addTab('设备类别')"> <img src="images/kontact.png"></img><br/> <span>设备类别</span> </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<div region="center" fit="true">
+    <div id="main-center">
+        <div title="首页" style="padding:1px;">
+            <fieldset class="fileset_style">
+                <legend class="leg_style">发票库存一览信息</legend>
+                <p style=" color: #CC0000;">税控盘编号:499000135630</p>
+                <table border="1" cellpadding="1" style="width: 100%;border-collapse:collapse:collapse;" cellspacing="0" align="center"
+                       id="one" class="TableStyleZB">
+                    <tbody>
+                    <tr>
+                        <td class="titleTd">序号</td>
+                        <td class="titleTd">发票种类</td>
+                        <td class="titleTd">类别代码</td>
+                        <td class="titleTd">限额</td>
+                        <td class="titleTd">起始号码</td>
+                        <td class="titleTd">终止号码</td>
+                        <td class="titleTd">发票份数</td>
+                        <td class="titleTd">剩余份数</td>
+                        <td class="titleTd">领购日期</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>增值税专票</td>
+                        <td>1110098076</td>
+                        <td>100000</td>
+                        <td>37535500</td>
+                        <td>37535999</td>
+                        <td>500</td>
+                        <td>500</td>
+                        <td>2015-07-02</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>增值税普票</td>
+                        <td>1110000450</td>
+                        <td>100000</td>
+                        <td>37535000</td>
+                        <td>37535499</td>
+                        <td>500</td>
+                        <td>499</td>
+                        <td>2015-07-02</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p style=" color: #CC0000;">税控盘编号:499000135631</p>
+                <table border="1" cellpadding="1" style="width: 99%;border-collapse:collapse:collapse;" cellspacing="0" align="center"
+                       id="one" class="TableStyleZB">
+                    <tbody>
+                    <tr>
+                        <td class="titleTd">序号</td>
+                        <td class="titleTd">发票种类</td>
+                        <td class="titleTd">类别代码</td>
+                        <td class="titleTd">限额</td>
+                        <td class="titleTd">起始号码</td>
+                        <td class="titleTd">终止号码</td>
+                        <td class="titleTd">发票份数</td>
+                        <td class="titleTd">剩余份数</td>
+                        <td class="titleTd">领购日期</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>增值税专票</td>
+                        <td>1110098076</td>
+                        <td>100000</td>
+                        <td>37535500</td>
+                        <td>37535999</td>
+                        <td>500</td>
+                        <td>500</td>
+                        <td>2015-07-02</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>增值税普票</td>
+                        <td>1110000450</td>
+                        <td>100000</td>
+                        <td>37535000</td>
+                        <td>37535499</td>
+                        <td>500</td>
+                        <td>499</td>
+                        <td>2015-07-02</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p style=" color: #CC0000;">税控盘编号:499000135632</p>
+                <table border="1" cellpadding="1" style="width: 100%;border-collapse:collapse:collapse;" cellspacing="0" align="center"
+                       id="one" class="TableStyleZB">
+                    <tbody>
+                    <tr>
+                        <td class="titleTd">序号</td>
+                        <td class="titleTd">发票种类</td>
+                        <td class="titleTd">类别代码</td>
+                        <td class="titleTd">限额</td>
+                        <td class="titleTd">起始号码</td>
+                        <td class="titleTd">终止号码</td>
+                        <td class="titleTd">发票份数</td>
+                        <td class="titleTd">剩余份数</td>
+                        <td class="titleTd">领购日期</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>增值税专票</td>
+                        <td>1110098076</td>
+                        <td>100000</td>
+                        <td>37535500</td>
+                        <td>37535999</td>
+                        <td>500</td>
+                        <td>500</td>
+                        <td>2015-07-02</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>增值税普票</td>
+                        <td>1110000450</td>
+                        <td>100000</td>
+                        <td>37535000</td>
+                        <td>37535499</td>
+                        <td>500</td>
+                        <td>499</td>
+                        <td>2015-07-02</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <div>
+                <div style="float: right; margin: 0 0 0 -66%; width: 33%;">
+                    <div id="chartContainer3">loading...</div>
+                </div>
+                <div style="float: left; width: 33%;">
+                    <div id="chartContainer">loading...</div>
+                </div>
+                <div style="float: left; width: 33%;">
+                    <div id="chartContainer2">loading...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
