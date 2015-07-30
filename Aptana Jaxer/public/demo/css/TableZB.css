@@ -1,0 +1,88 @@
+﻿/*顶部加粗表格*/
+.TableStyleZB
+{
+    font: 11px verdana,verdana, arial;
+	BORDER-BOTTOM: #CCCCCC  1px solid; 
+    BORDER-TOP: #CCCCCC  1px solid;
+    BORDER-left: #CCCCCC  1px solid;
+    BORDER-right: #CCCCCC  1px solid;    
+    margin:1;
+    border-collapse:collapse;   
+    line-height: 23px;               
+}
+/*行效果*/
+.trMouseOver{background:#D8FAD8;}
+.tr2{background:#F0F8FF;}
+.tr3{background:#FFFFFF;}
+.trTitle{background:#E6F3FF;}
+.TableStyleZB td {
+	margin: 0;
+	padding:0.25em;
+	border:#CCCCCC  1px solid; 
+	
+}
+.tbody tr th {
+	padding: 20px 10px;
+	border-bottom: 1px dotted #fafafa;
+}
+ .leg_styleA
+ {
+   color:#2f80d1;
+   height:23px;
+   line-height:10px;
+   font-weight:bold;
+   margin:0px;
+   padding:0px;
+   line-height:23px;
+   padding-left:8px;
+   padding-right:8px;
+   cursor:pointer;
+ }
+
+
+
+ .formBtn
+   {
+        font-size: 12px;
+        color: white;
+        background-image: url(../images/01.png);
+        background-color: #24AEFE;
+        background-repeat:repeat-x;
+        border-right: 1px solid #3d80df;
+        border-bottom: 1px solid #3d80df;
+        border-top: 1px solid #0380D5;
+        border-left: 1px solid #0380D5;
+  
+        height: 25px;
+ }
+ .form
+  {
+        border: 1px solid #666;
+ }
+.form tr td
+  {
+        font-family:微软雅黑;
+        font-size: 12px;
+        padding: 3px 8px;
+        background: #fff;
+ }
+.form thead td
+ {
+        color: #fff;
+        background-color: #3d80df;
+        font-size: 12px;
+        border-bottom: 1px solid #999;
+ }
+.form tbody td
+ {
+        border-left: 1px solid #D9D9D9;
+ }
+.titleTd {
+    color: #ffffff;
+    text-align: center;
+    font-family: 微软雅黑;
+    background: #2f80d1 !important;
+}
+
+
+

@@ -1,0 +1,49 @@
+*{
+	font-size:12px;
+}
+body{
+	margin:0px;
+	padding:0px;
+	ackground:#fff;
+}
+a:link {
+	text-decoration: none;
+	color: #1B5978;
+}
+a:visited {
+	text-decoration: none;
+	color: #1B5978;
+}
+a:hover {
+	text-decoration: underline;
+	color: red;
+
+}
+p{
+	line-height:200%;
+}
+.tool-add{
+	background-image:url('../images/edit_add.png') !important
+}
+.tool-edit{
+	background-image:url('../images/pencil.png') !important
+}
+.tool-delete{
+	background-image:url('../images/edit_remove.png') !important
+}
+.tool-cut{
+	background-image:url('../images/cut.png') !important
+}
+.tool-save{
+	background-image:url('../images/filesave.png') !important
+}
+.tool-find{
+	background-image:url('../images/kmag.png') !important
+}
+.nav-opt{
+	background-image:url('../images/kcmsystem.png') !important
+}
+.nav-config{
+	background-image:url('../images/wizard.png') !important
+}
+
