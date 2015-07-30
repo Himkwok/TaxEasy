@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>WikiLite</title>
+		
+
+		<!-- This script block will execute only on the server because of the
+			runat="server" attributes. -->
+		<script type="text/javascript" runat="server" src="index.js">
+
+			function readAndFill()
+			{
+				Jaxer.File.write("test.txt", "aaaaa");
+				
+			}
+			
+						
+		</script>
+						
+	</head>
+	<body onload="readAndFill()"></body>
+</html>

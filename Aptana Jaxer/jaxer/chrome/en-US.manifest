@@ -1,0 +1,3 @@
+locale necko en-US jar:en-US.jar!/locale/en-US/necko/
+locale global en-US jar:en-US.jar!/locale/en-US/global/
+locale pipnss en-US jar:en-US.jar!/locale/en-US/pipnss/

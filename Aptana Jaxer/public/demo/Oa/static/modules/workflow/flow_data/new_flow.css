@@ -1,0 +1,90 @@
+
+/*------------ÐÂ½¨Êý¾ÝÔ´Ò³Ãæµ¼º½Ð¡Í¼±êÑùÊ½ --------*/
+ 
+.icon20-change_way,.icon20-change_way_hover,.icon20-new_datasrc,.icon20-new_datasrc_hover,
+.icon20-defi_field,.icon20-defi_field_hover,.icon20-import_file,.icon20-import_file_hover,
+.icon20-edit_datasrc,.icon20-edit_datasrc_hover{	
+	padding-left:36px;
+	display:block;
+	height:22px;
+	margin-top:5px;
+}
+.icon20-change_way{/*-- Ñ¡ÔñÊý¾ÝÔ´Á¬½Ó·½Ê½ --*/
+	background:url(/static/modules/workflow/flow_data/images/change_way.png) no-repeat;
+}
+.icon20-change_way_hover{/*-- Ñ¡ÔñÊý¾ÝÔ´Á¬½Ó·½?Ô-µã»÷ºó  --*/
+	background:url(/static/modules/workflow/flow_data/images/change_way_hover.png) no-repeat;
+}
+.icon20-new_datasrc{/*-- ÐÂ½¨Êý¾ÝÔ´ --*/
+	background:url(/static/modules/workflow/flow_data/images/new_datasrc.png) no-repeat;
+}
+.icon20-new_datasrc_hover{/*-- ÐÂ½¨Êý¾ÝÔ´-µã»÷ºó  --*/
+	background:url(/static/modules/workflow/flow_data/images/new_datasrc_hover.png) no-repeat;
+}
+.icon20-defi_field{/*-- ¶¨Òå×Ö¶Î  --*/
+	background:url(/static/modules/workflow/flow_data/images/defi_field.png) no-repeat;
+}
+.icon20-defi_field_hover{/*-- ¶¨Òå×Ö¶Î--µã»÷ºó  --*/
+	background:url(/static/modules/workflow/flow_data/images/defi_field_hover.png) no-repeat;
+}
+.icon20-import_file{/*-- µ¼ÈëÎÄ¼þ  --*/
+	background:url(/static/modules/workflow/flow_data/images/import_file.png) no-repeat;
+}
+.icon20-import_file_hover{/*-- µ¼ÈëÎÄ¼þ-µã»÷ºó  --*/
+	background:url(/static/modules/workflow/flow_data/images/import_file_hover.png) no-repeat;
+}
+.icon20-edit_datasrc{/*-- ±à¼­Êý¾ÝÔ´ --*/
+	background:url(/static/modules/workflow/flow_data/images/edit_datasrc.png) no-repeat;
+}
+.icon20-edit_datasrc_hover{/*-- ±à¼­Êý¾ÝÔ´-µã»÷ºó  --*/
+	background:url(/static/modules/workflow/flow_data/images/edit_datasrc_hover.png) no-repeat;
+}
+.number_tip{
+	margin-top:10px;
+	font-weight:bold;	
+}
+.left_body{/*-- ÓÒ²àÒ³Ãæ ×ó±ß²¼¾Ö  --*/
+	width:403px;
+    float:left;
+}
+.right_body{/*-- ÓÒ²àÒ³Ãæ ÓÒ±ß²¼¾Ö  --*/
+	width:403px;
+    float:left;
+	margin-left:50px;
+}
+.main_content{
+	float:left;
+}
+.flow_main_body_left{
+	float:left;
+}
+.flow_name{
+	color:green;
+	font-size:12px;
+	float:left;
+	font-weight:normal;
+}
+.flow_intro{
+	color:black;
+	float:left;
+}
+#flow_name{
+	margin-bottom:0px;
+	width:170px;
+}
+#form_select > span {
+	float:left;
+}
+.view_form{
+	color:#3f9bca;
+	text-decoration:none;
+	float:left;
+	margin-top:3px;
+}
+.select_form{
+	float:left;
+}
+#form_select{
+	float:left;
+	padding-bottom:10px;
+}

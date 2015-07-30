@@ -1,0 +1,1 @@
+[{'nsrsbh':'3507210016577','nsrmc':'张三','jydd':'北京xxxxxxxxxxxxxx','jyhy':'制造业','yymj':'444.00','gyrs':'500','yjye':'20.00','ysye':'20.00','yyjye':'20.00','yysye':'5.50','xyjye':'5.50','xysye':'5.50'}]

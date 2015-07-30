@@ -1,0 +1,43 @@
+			/*
+			 * Set the initial editing state to false and read in the last saved
+			 * value of the 'wiki'
+			 */
+			function init()
+			{
+				setEditing(false);
+				readAndFill();
+			}
+
+			/*
+			 * Open up the file we're using to save data and read in its contents
+			 * and set that to the value of the textarea.
+			 */
+			function readAndFill()
+			{
+				var filePath = getFilePath();
+				var fileExists = Jaxer.File.exists(filePath);
+				$("contents").value = (fileExists ? Jaxer.File.read(filePath) : "")+"rtretertert";
+				
+			}
+			
+			/*
+			 * Return the filename of the file that will persist our wiki contents
+			 */
+			function getFilePath()
+			{
+				return "json/contents.txt";
+			}
+			
+			/*
+			 * Do the actual saving of the text that was entered.
+			 */
+			function save(contents)
+			{
+				contents = contents.replace(/\r\n/g, "\n"); // normalize newlines for Windows/IE;
+				contents = contents.replace(/\r/g, "\n"); // normalize newlines for Mac;
+				checkValid(contents);
+				Jaxer.File.write(getFilePath(), contents);
+			}
+			// Because we want this function available to the client as well, we set its 'proxy'
+			// value to 'true'
+			save.proxy = true;

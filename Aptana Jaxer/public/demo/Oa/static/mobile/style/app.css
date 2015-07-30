@@ -1,0 +1,57 @@
+footer.ui-footer .ui-icon-return,header.ui-header .ui-icon-return{
+      padding: 0 8px;
+      margin: 0;
+      border: none;
+      height: 40px;
+      background: #F4F4F4;
+      line-height: 45px;
+      cursor: pointer;
+}
+header.ui-header .ui-toolbar-right{
+    right: 10px;
+    top: 8px;
+}
+footer.ui-footer .ui-toolbar-right{
+    right: 10px;
+    top: 5px;
+}
+footer.ui-footer,header.ui-header{
+    height: 45px;
+    padding: 0;
+}
+footer.ui-footer .ui-toolbar-wrap,header.ui-header .ui-toolbar-wrap{ 
+    border: none;
+    height: 45px; 
+}
+footer.ui-footer .ui-toolbar-wrap{
+    border-top: 1px solid #ccc;
+}
+header.ui-header .ui-toolbar-wrap{
+    border-bottom: 1px solid #ccc;
+}
+header.ui-header .ui-btn{ 
+    position: relative;
+    display: initial;
+    right: 0;
+    top: 0;
+    margin: 0; 
+} 
+header.ui-header .ui-toolbar-title,footer.ui-footer .ui-toolbar-title{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 43px;
+}
+header.ui-header .ui-toolbar-title .ui-btn,footer.ui-footer .ui-toolbar-title .ui-btn{
+    padding: 0 20px;
+    margin: 0 -2px;
+}
+header.ui-header .ui-toolbar-title .ui-btn{
+    margin-top: 8px;
+}
+footer.ui-footer .ui-toolbar-title .ui-btn{
+    margin-top: 7px;
+}
+header.ui-header .ui-toolbar-title .ui-btn.disabled,footer.ui-footer .ui-toolbar-title .ui-btn.disabled{
+    background: rgba(5, 126, 200,0.8);
+    color: #FFF;
+}
