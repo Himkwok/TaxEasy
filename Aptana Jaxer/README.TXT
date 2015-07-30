@@ -2,7 +2,7 @@ Welcome To Jaxer, the Aptana Ajax Server.
 
 Quick Start:
 
-===== On Microsoft Windows:
+===== On Microsoft Windows hi:
 
 The quickest way to get started using this standalone Jaxer package 
 is to double click the StartServers.bat file. This will start JaxerManager and, 
